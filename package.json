@@ -1,0 +1,16 @@
+{
+  "name": "twig",
+  "version": "1.0.0",
+  "description": "A Slack bot for Daily Wins",
+  "keywords": [
+    "Slack",
+    "bot",
+    "Daily Wins"
+  ],
+  "engines": {
+    "node": ">=6.3.0"
+  },
+  "dependencies": {
+    "slackbots": "*"
+  }
+}
