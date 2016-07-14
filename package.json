@@ -5,19 +5,20 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/twigco/twig"
-  },  
+  },
   "license": "MIT",
   "engines": {
     "node": ">=6.3.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha"
   },
   "dependencies": {
     "slackbots": "^0.5.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "istanbul": "^0.4.4",
     "mocha": "^2.5.3"
   }
 }
