@@ -2,15 +2,22 @@
   "name": "twig",
   "version": "1.0.0",
   "description": "A Slack bot for Daily Wins",
-  "keywords": [
-    "Slack",
-    "bot",
-    "Daily Wins"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/twigco/twig"
+  },  
+  "license": "MIT",
   "engines": {
     "node": ">=6.3.0"
   },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
   "dependencies": {
-    "slackbots": "*"
+    "slackbots": "^0.5.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
   }
 }
