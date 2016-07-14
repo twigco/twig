@@ -8,6 +8,6 @@ try {
   let twigBot = new TwigBot(token)
   twigBot.run()
 } catch (e) {
-	console.log(e)
-	process.exit(1)
+  console.log(e)
+  process.exit(1)
 }
