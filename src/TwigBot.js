@@ -4,8 +4,8 @@ let Bot = require('slackbots')
 
 class TwigBot extends Bot {
   constructor(token) {
-    if (!token || token == '')
-      throw new Error('Bot token must not be null or empty')
+    if (!token)
+      throw new Error('Bot token must not be null')
 
     super({ token: token, name: 'twig' })
   }
