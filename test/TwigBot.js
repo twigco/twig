@@ -14,7 +14,7 @@ describe('TwigBot', () => {
     it('should send message', () => {
       let sentChannel, sentMessage
 
-      let twigBot = new TwigBot(process.env.BOT_TOKEN)
+      let twigBot = new TwigBot(process.env.SLACK_TOKEN)
       twigBot.postMessageToChannel = (channel, message) => {
         sentChannel = channel
         sentMessage = message

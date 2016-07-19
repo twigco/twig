@@ -3,7 +3,7 @@
 let TwigBot = require('./TwigBot')
 let MessageScheduler = require('./MessageScheduler')
 
-const token = process.env.BOT_TOKEN
+const token = process.env.SLACK_TOKEN
 
 try {
   let twigBot = new TwigBot(token)
