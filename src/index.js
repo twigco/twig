@@ -1,12 +1,15 @@
 'use strict'
 
 let TwigBot = require('./TwigBot')
+let MessageScheduler = require('./MessageScheduler')
 
-let token = process.env.BOT_TOKEN
+const token = process.env.SLACK_TOKEN
 
 try {
   let twigBot = new TwigBot(token)
-  twigBot.run()
+  let messageScheduler = new MessageScheduler(twigBot)
+
+  messageScheduler.run()
 } catch (e) {
   console.log(e)
   process.exit(1)
