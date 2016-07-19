@@ -9,4 +9,21 @@ describe('TwigBot', () => {
       expect(() => new TwigBot()).to.throw('Bot token should not be null')
     })
   })
+
+  describe('sendMessage', () => {
+    it('should send message', () => {
+      let sentChannel, sentMessage
+
+      let twigBot = new TwigBot(process.env.BOT_TOKEN)
+      twigBot.postMessageToChannel = (channel, message) => {
+        sentChannel = channel
+        sentMessage = message
+      }   
+
+      twigBot.sendMessage('message')
+
+      expect(sentChannel).to.equal('general')
+      expect(sentMessage).to.equal('<!here>: message')
+    })
+  })
 })

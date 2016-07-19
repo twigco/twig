@@ -3,15 +3,12 @@
 let expect = require('chai').expect
 let MessageScheduler = require('../src/MessageScheduler')
 
-describe('MessageScheduler', function() {
-  describe('run', function() {
-    it('should send message in schedules', function(done) {
+describe('MessageScheduler', () => {
+  describe('run', () => {
+    it('should send scheduled message', done => {
       let messages = []
       let messageSender = {
-        sendMessage: message => {
-          console.log(message)
-          messages.push(message)
-        }
+        sendMessage: message => messages.push(message)
       }
 
       let messageScheduler = new MessageScheduler(messageSender)
@@ -22,7 +19,7 @@ describe('MessageScheduler', function() {
       setTimeout(function() {
         expect(messages).to.contain('test message')
         done()
-      }, 1500);
+      }, 1100);
     })
   })
 })
