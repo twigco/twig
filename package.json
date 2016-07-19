@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha",
-    "prestart": "./node_modules/eslint/bin/eslint src test",
+    "prestart": "node ./node_modules/eslint/bin/eslint src test",
     "start": "node ./src/index.js",
     "dev": "./node_modules/.bin/nodemon --exec npm start",
     "test-reload": "./node_modules/.bin/nodemon --exec node ./node_modules/mocha/bin/_mocha"
