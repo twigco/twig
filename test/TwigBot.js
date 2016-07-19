@@ -18,7 +18,7 @@ describe('TwigBot', () => {
       twigBot.postMessageToChannel = (channel, message) => {
         sentChannel = channel
         sentMessage = message
-      }   
+      }
 
       twigBot.sendMessage('message')
 

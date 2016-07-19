@@ -16,10 +16,10 @@ describe('MessageScheduler', () => {
 
       messageScheduler.run()
 
-      setTimeout(function() {
+      setTimeout(() => {
         expect(messages).to.contain('test message')
         done()
-      }, 1100);
+      }, 1100)
     })
   })
 })
