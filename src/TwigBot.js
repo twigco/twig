@@ -8,6 +8,8 @@ class TwigBot extends Bot {
       throw new Error('Bot token should not be null')
     }
     super({ token: token, name: 'twig' })
+
+    this.on('start', () => this.sendMessage('I am on!'))
   }
 
   sendMessage (message) {
