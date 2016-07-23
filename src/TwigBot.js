@@ -1,6 +1,6 @@
 'use strict'
 
-let Bot = require('slackbots')
+const Bot = require('slackbots')
 
 class TwigBot extends Bot {
   constructor (token) {

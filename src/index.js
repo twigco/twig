@@ -1,7 +1,7 @@
 'use strict'
 
-let TwigBot = require('./TwigBot')
-let MessageScheduler = require('./MessageScheduler')
+const TwigBot = require('./TwigBot')
+const MessageScheduler = require('./MessageScheduler')
 
 const token = process.env.SLACK_TOKEN
 

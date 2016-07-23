@@ -1,10 +1,10 @@
 'use strict'
 
-let cron = require('node-cron')
+const CronJob = require('cron').CronJob
 
 const schedules = [
   {
-    cron: '0 8 * * 1-5',
+    cron: '00 08 * * 1-5',
     message: 'Bom dia pessoal! Quais são suas três vitórias de hoje?'
   },
   {
@@ -20,9 +20,9 @@ class MessageScheduler {
 
   run () {
     this.schedules.forEach(schedule => {
-      cron.schedule(schedule.cron, () => {
+      new CronJob(schedule.cron, () => { // eslint-disable-line no-new
         this.messageSender.sendMessage(schedule.message)
-      })
+      }, null, true, 'America/Sao_Paulo')
     })
   }
 }

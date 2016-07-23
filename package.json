@@ -18,7 +18,7 @@
     "test-reload": "nodemon --exec mocha"
   },
   "dependencies": {
-    "node-cron": "^1.1.1",
+    "cron": "^1.1.0",
     "slackbots": "^0.5.1"
   },
   "devDependencies": {
