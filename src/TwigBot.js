@@ -13,39 +13,74 @@ class TwigBot extends Bot {
 
   sendMessage (message) {
     var params = {
-      'text': 'Would you like to play a game?',
+      'text': 'Como foram suas *wins* ?',
       'attachments': [
         {
-          'text': 'Choose a game to play',
-          'fallback': 'You are unable to choose a game',
-          'callback_id': 'wopr_game',
+          'text': 'Jogar xadrez com o papa',
+          'fallback': 'Você não poderá interagir com suas daily wins.',
+          'callback_id': 'daily_win_1',
           'color': '#3AA3E3',
           'attachment_type': 'default',
           'actions': [
             {
-              'name': 'chess',
-              'text': 'Chess',
+              'name': 'ok',
+              'text': 'Ok',
+              'style': 'primary',
               'type': 'button',
-              'value': 'chess'
+              'value': 'ok'
             },
             {
-              'name': 'maze',
-              'text': "Falken's Maze",
+              'name': 'no',
+              'text': 'Não rolou',
               'type': 'button',
-              'value': 'maze'
+              'value': 'no',
+              'style': 'danger'
+            }
+          ]
+        },
+        {
+          'text': 'Não quebrar a build',
+          'fallback': 'Você não poderá interagir com suas daily wins.',
+          'callback_id': 'daily_win_2',
+          'color': '#3AA3E3',
+          'attachment_type': 'default',
+          'actions': [
+            {
+              'name': 'ok',
+              'text': 'Ok',
+              'style': 'primary',
+              'type': 'button',
+              'value': 'ok'
             },
             {
-              'name': 'war',
-              'text': 'Thermonuclear War',
-              'style': 'danger',
+              'name': 'no',
+              'text': 'Não rolou',
               'type': 'button',
-              'value': 'war',
-              'confirm': {
-                'title': 'Are you sure?',
-                'text': "Wouldn't you prefer a good game of chess?",
-                'ok_text': 'Yes',
-                'dismiss_text': 'No'
-              }
+              'value': 'no',
+              'style': 'danger'
+            }
+          ]
+        },
+        {
+          'text': 'Comer almoço',
+          'fallback': 'Você não poderá interagir com suas daily wins.',
+          'callback_id': 'daily_win_3',
+          'color': '#3AA3E3',
+          'attachment_type': 'default',
+          'actions': [
+            {
+              'name': 'ok',
+              'text': 'Ok',
+              'style': 'primary',
+              'type': 'button',
+              'value': 'ok'
+            },
+            {
+              'name': 'no',
+              'text': 'Não rolou',
+              'type': 'button',
+              'value': 'no',
+              'style': 'danger'
             }
           ]
         }
