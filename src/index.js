@@ -1,16 +1,17 @@
 'use strict'
 
-let TwigBot = require('./TwigBot')
-let MessageScheduler = require('./MessageScheduler')
+let koa = require('koa')
+let bodyParser = require('koa-bodyparser')
 
-const token = process.env.SLACK_TOKEN
+const app = koa()
+const port = process.env.PORT || 3000
+app.use(bodyParser())
 
-try {
-  let twigBot = new TwigBot(token)
-  let messageScheduler = new MessageScheduler(twigBot)
+app.use(function * () {
+  this.body = { hello: 'world!' }
+  console.log(this.request.body)
+})
 
-  messageScheduler.run()
-} catch (e) {
-  console.log(e)
-  process.exit(1)
-}
+app.on('error', err => console.error('server error', err))
+app.listen(port)
+console.log(`Listening on port ${port}`)
