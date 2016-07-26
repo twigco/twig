@@ -2,7 +2,6 @@
 
 const TwigBot = require('./TwigBot')
 const MessageScheduler = require('./MessageScheduler')
-
 const koa = require('koa')
 const bodyParser = require('koa-bodyparser')
 
@@ -14,10 +13,9 @@ app.use(bodyParser())
 app.use(function * () {
   this.body = { hello: 'world!' }
 })
-
 app.on('error', err => console.error('server error', err))
-
 app.listen(port)
+
 console.log(`Listening on port ${port}`)
 
 let twigBot = new TwigBot(token)

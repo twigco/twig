@@ -9,7 +9,7 @@ class TwigBot extends Bot {
     }
 
     super({ token: token, name: 'twig' })
-    
+
     this.on('start', () => this.sendMessage('I am on!'))
   }
 
