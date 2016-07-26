@@ -18,6 +18,8 @@
     "test-reload": "nodemon --exec mocha"
   },
   "dependencies": {
+    "koa": "^1.2.1",
+    "koa-bodyparser": "^2.2.0",
     "cron": "^1.1.0",
     "slackbots": "^0.5.1"
   },

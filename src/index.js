@@ -3,14 +3,23 @@
 const TwigBot = require('./TwigBot')
 const MessageScheduler = require('./MessageScheduler')
 
+const koa = require('koa')
+const bodyParser = require('koa-bodyparser')
+
+const app = koa()
+const port = process.env.PORT || 3000
 const token = process.env.SLACK_TOKEN
 
-try {
-  let twigBot = new TwigBot(token)
-  let messageScheduler = new MessageScheduler(twigBot)
+app.use(bodyParser())
+app.use(function * () {
+  this.body = { hello: 'world!' }
+})
 
-  messageScheduler.run()
-} catch (e) {
-  console.log(e)
-  process.exit(1)
-}
+app.on('error', err => console.error('server error', err))
+
+app.listen(port)
+console.log(`Listening on port ${port}`)
+
+let twigBot = new TwigBot(token)
+let messageScheduler = new MessageScheduler(twigBot)
+messageScheduler.run()
