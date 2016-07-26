@@ -1,10 +1,10 @@
 'use strict'
 
-let TwigBot = require('./TwigBot')
-let MessageScheduler = require('./MessageScheduler')
+const TwigBot = require('./TwigBot')
+const MessageScheduler = require('./MessageScheduler')
 
-let koa = require('koa')
-let bodyParser = require('koa-bodyparser')
+const koa = require('koa')
+const bodyParser = require('koa-bodyparser')
 
 const app = koa()
 const port = process.env.PORT || 3000
@@ -12,7 +12,7 @@ const token = process.env.SLACK_TOKEN
 
 app.use(bodyParser())
 
-app.use(function * () {
+app.use(function * respond () {
   this.body = { hello: 'world!' }
   console.log(this.request.body)
 })
