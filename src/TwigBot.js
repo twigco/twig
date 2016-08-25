@@ -89,7 +89,7 @@ class TwigBot extends Bot {
       ]
     }
 
-    this.postMessageToChannel('general', `<!here>: ${message}`, params)
+    //this.postMessageToChannel('general', `<!here>: ${message}`, params)
   }
 }
 

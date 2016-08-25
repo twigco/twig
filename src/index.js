@@ -11,8 +11,9 @@ const token = process.env.SLACK_TOKEN
 
 app.use(bodyParser())
 app.use(function * () {
+  console.log(this.request.body)
   this.body = { hello: 'world!' }
-})
+})  
 app.on('error', err => console.error('server error', err))
 app.listen(port)
 
